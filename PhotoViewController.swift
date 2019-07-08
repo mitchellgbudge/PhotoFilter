@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoViewController: UIViewController {
 
@@ -45,7 +46,20 @@ class PhotoViewController: UIViewController {
     }
     
     @IBAction func savePhotoButtonPressed(_ sender: Any) {
-        
+        guard let originalImage = originalImage else { return }
+        let processedImage = image(byFiltering: originalImage)
+        PHPhotoLibrary.requestAuthorization { (status) in
+            guard status == .authorized else { return }
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetCreationRequest.creationRequestForAsset(from: processedImage)
+            }, completionHandler: { (success, error) in
+                if let error = error {
+                    NSLog("Error saving photo: \(error)")
+                    return
+                }
+                NSLog("Saved photo!")
+            })
+        }
     }
     
     @IBAction func brightnessValueChanged(_ sender: Any) {

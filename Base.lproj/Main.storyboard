@@ -36,7 +36,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-Sd-yGS">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-Sd-yGS">
                                                 <rect key="frame" x="88" y="0.0" width="296" height="31"/>
                                                 <connections>
                                                     <action selector="brightnessValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eUe-2k-VgU"/>
@@ -53,7 +53,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Al1-2z-ym4">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="Al1-2z-ym4">
                                                 <rect key="frame" x="88" y="0.0" width="296" height="31"/>
                                                 <connections>
                                                     <action selector="contrastValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qwU-ey-brl"/>
@@ -70,7 +70,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-Z4-1Jo">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-Z4-1Jo">
                                                 <rect key="frame" x="88" y="0.0" width="296" height="31"/>
                                                 <connections>
                                                     <action selector="saturationValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JcG-YM-Iad"/>
