@@ -13,7 +13,7 @@
         <!--PhotoFilter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoFilter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotoViewController" customModule="PhotoFilter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-Sd-yGS">
                                                 <rect key="frame" x="88" y="0.0" width="296" height="31"/>
+                                                <connections>
+                                                    <action selector="brightnessValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eUe-2k-VgU"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -52,6 +55,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Al1-2z-ym4">
                                                 <rect key="frame" x="88" y="0.0" width="296" height="31"/>
+                                                <connections>
+                                                    <action selector="contrastValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qwU-ey-brl"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -66,12 +72,18 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-Z4-1Jo">
                                                 <rect key="frame" x="88" y="0.0" width="296" height="31"/>
+                                                <connections>
+                                                    <action selector="saturationValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JcG-YM-Iad"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSk-TS-o8S">
                                         <rect key="frame" x="0.0" y="504" width="382" height="30"/>
                                         <state key="normal" title="Save Photo"/>
+                                        <connections>
+                                            <action selector="savePhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDn-30-FiI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -89,8 +101,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="PhotoFilter" id="QmZ-vv-58A">
-                        <barButtonItem key="rightBarButtonItem" title="Choose Photo" id="paG-C9-aZE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Choose Photo" id="paG-C9-aZE">
+                            <connections>
+                                <action selector="choosePhotoButtonPressed:" destination="BYZ-38-t0r" id="6gL-CI-h1O"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="nd4-Sd-yGS" id="Cwz-hc-NpX"/>
+                        <outlet property="contrastSlider" destination="Al1-2z-ym4" id="k6c-hb-5eF"/>
+                        <outlet property="imageView" destination="fqy-by-rbu" id="3Pw-Bx-bCT"/>
+                        <outlet property="saturationSlider" destination="OLR-Z4-1Jo" id="GKX-e3-8ti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
